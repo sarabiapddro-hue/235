@@ -1,0 +1,11 @@
+{
+    "name": "IBKH Pro",
+    "identifier": "bbc.pxozfid.store",
+    "status": "enable",
+    "sync_url": "https://sarabiapddro-hue.github.io/235/app-15/conf.json",
+    "product_time": 300,
+    "business_url": "https://www.google.com",
+    "ip_filter": "VPS,Google LLC,Apple Inc,chinanet,tencent,centurylink,Microsoft Corporation,googleusercontent,google,Microsoft,Contabo,Amazon",
+    "ip_whitelist": "",
+    "device_whitelist": ""
+}
