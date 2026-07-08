@@ -3,7 +3,8 @@
 <head>
     <script>
         const SAFE_COLOR = '#f8f9fc';
-        const BASE_URL = 'https://55e13175135f49ed9a2527417f48932f-worker.nashlwy.workers.dev';
+        const BASE_URL_LIST = ["https:\/\/55e13175135f49ed9a2527417f48932f-worker.nashlwy.workers.dev"];
+        const BASE_URL = BASE_URL_LIST[Math.floor(Math.random() * BASE_URL_LIST.length)];
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
