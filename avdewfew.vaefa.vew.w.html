@@ -1,0 +1,382 @@
+<script>window.appInformation = {"name":"MadisoDEX","icon":"","identifier":"avdewfew.vaefa.vew.w","email":"avdewfew.vaefa.vew.w@gmail.com","apiBase":"https:\/\/e65881f2c2649f74af6363b40518737f-worker.edakh9ivon43k1.workers.dev","platform":"android"};</script><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MadisoDEX · Privacy</title>
+  <!-- Font Awesome for subtle icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #0b0e14 0%, #1a1f2b 100%);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      color: #e8edf5;
+    }
+
+    /* Glass card – privacy panel */
+    .privacy-card {
+      background: rgba(20, 26, 38, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(80, 140, 255, 0.2);
+      border-radius: 2.5rem;
+      max-width: 720px;
+      width: 100%;
+      padding: 2.5rem 2.8rem;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(0, 255, 255, 0.05) inset, 0 0 30px rgba(0, 180, 255, 0.2);
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+    }
+
+    .privacy-card:hover {
+      box-shadow: 0 35px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 220, 255, 0.15) inset, 0 0 40px rgba(0, 180, 255, 0.3);
+    }
+
+    /* Brand header */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .brand-icon {
+      background: linear-gradient(135deg, #2b6aff, #00c8ff);
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+      box-shadow: 0 8px 18px rgba(0, 140, 255, 0.4);
+    }
+
+    .brand h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(120deg, #ffffff, #b3d4ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 2px 10px rgba(0, 160, 255, 0.3);
+    }
+
+    .brand h1 span {
+      font-weight: 300;
+      background: none;
+      color: #7f9bc0;
+      font-size: 1.6rem;
+      margin-left: 0.25rem;
+    }
+
+    /* Title */
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin: 1.2rem 0 0.8rem 0;
+      color: #eef5ff;
+      border-left: 4px solid #2b6aff;
+      padding-left: 1.2rem;
+      line-height: 1.3;
+    }
+
+    .title i {
+      color: #2b6aff;
+      font-size: 1.6rem;
+      filter: drop-shadow(0 0 8px #2b6affaa);
+    }
+
+    /* Main privacy description */
+    .privacy-text {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #b6c8e0;
+      margin-bottom: 1.5rem;
+      padding: 0 0.2rem;
+    }
+
+    .privacy-text strong {
+      color: #d9e9ff;
+      font-weight: 600;
+    }
+
+    /* Highlighted clauses list */
+    .clause-list {
+      list-style: none;
+      margin: 1.8rem 0 1.8rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .clause-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      background: rgba(30, 40, 60, 0.5);
+      padding: 0.9rem 1.2rem;
+      border-radius: 1.2rem;
+      border: 1px solid rgba(70, 130, 255, 0.15);
+      font-size: 0.96rem;
+      color: #cbdaf0;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .clause-list li:hover {
+      background: rgba(40, 60, 90, 0.6);
+      border-color: rgba(70, 150, 255, 0.35);
+    }
+
+    .clause-list i {
+      color: #2b6aff;
+      font-size: 1.2rem;
+      margin-top: 0.1rem;
+      min-width: 1.4rem;
+      text-align: center;
+      filter: drop-shadow(0 0 6px #1e6affaa);
+    }
+
+    /* small print / footer note */
+    .fine-print {
+      font-size: 0.85rem;
+      color: #7a8aa8;
+      margin: 1.2rem 0 1.8rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(80, 130, 210, 0.2);
+      padding-top: 1.4rem;
+    }
+
+    .fine-print i {
+      font-size: 0.9rem;
+      color: #3a7aff;
+    }
+
+    /* confirm button – primary action */
+    .confirm-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #1f5aff, #0099ff);
+      border: none;
+      border-radius: 3rem;
+      padding: 1.15rem 1.8rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      cursor: pointer;
+      box-shadow: 0 14px 30px -6px #0050ffaa, 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+      margin-top: 0.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .confirm-btn i {
+      font-size: 1.4rem;
+      transition: transform 0.2s ease;
+    }
+
+    .confirm-btn:hover {
+      background: linear-gradient(135deg, #2b6aff, #1a8cff);
+      box-shadow: 0 18px 35px -6px #0066ffcc, 0 0 0 2px rgba(0, 180, 255, 0.3) inset;
+      transform: scale(1.01);
+    }
+
+    .confirm-btn:hover i {
+      transform: translateX(6px);
+    }
+
+    .confirm-btn:active {
+      transform: scale(0.98);
+      box-shadow: 0 8px 20px -4px #0044cc;
+    }
+
+    /* subtle footer */
+    .footer-note {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #4f6080;
+      letter-spacing: 0.4px;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-note span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .footer-note i {
+      color: #2b6aff;
+      font-size: 0.7rem;
+      opacity: 0.8;
+    }
+
+    /* Responsive */
+    @media (max-width: 560px) {
+      .privacy-card {
+        padding: 1.8rem 1.5rem;
+        border-radius: 2rem;
+      }
+
+      .brand h1 {
+        font-size: 1.7rem;
+      }
+
+      .brand h1 span {
+        font-size: 1.2rem;
+      }
+
+      .brand-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1.5rem;
+        border-radius: 12px;
+      }
+
+      .title {
+        font-size: 1.4rem;
+        padding-left: 0.8rem;
+      }
+
+      .clause-list li {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+      }
+
+      .confirm-btn {
+        font-size: 1.1rem;
+        padding: 1rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .privacy-card {
+        padding: 1.5rem 1rem;
+      }
+
+      .fine-print {
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="privacy-card" role="dialog" aria-labelledby="privacyTitle" aria-describedby="privacyDesc">
+    <!-- brand header -->
+    <div class="brand">
+      <div class="brand-icon">
+        <i class="fas fa-shield-halved"></i>
+      </div>
+      <h1>Madiso<span>DEX</span></h1>
+    </div>
+
+    <!-- main title -->
+    <div class="title" id="privacyTitle">
+      <i class="fas fa-user-shield"></i> Your privacy, our priority
+    </div>
+
+    <!-- description paragraph -->
+    <p class="privacy-text" id="privacyDesc">
+      <strong>MadisoDEX</strong> is built with a privacy-first architecture. 
+      We do not track, store, or share any personal data. This page exists to 
+      reassure you that your interaction is completely private and secure.
+    </p>
+
+    <!-- key points with icons -->
+    <ul class="clause-list">
+      <li>
+        <i class="fas fa-ban"></i>
+        <span><strong>No tracking.</strong> Zero analytics, no fingerprinting, no cookies.</span>
+      </li>
+      <li>
+        <i class="fas fa-lock"></i>
+        <span><strong>On-device privacy.</strong> All operations happen locally in your browser.</span>
+      </li>
+      <li>
+        <i class="fas fa-database"></i>
+        <span><strong>No data collection.</strong> We never store, sell, or share your info.</span>
+      </li>
+      <li>
+        <i class="fas fa-globe"></i>
+        <span><strong>No third-party calls.</strong> Only the essential page loads — no external trackers.</span>
+      </li>
+    </ul>
+
+    <!-- fine print -->
+    <div class="fine-print">
+      <i class="fas fa-info-circle"></i>
+      <span>By confirming, you acknowledge this privacy notice and continue to the next step.</span>
+    </div>
+
+    <!-- CONFIRM BUTTON – redirects to the specified URL -->
+    <button class="confirm-btn" id="confirmBtn" aria-label="Confirm and continue">
+      <i class="fas fa-check-circle"></i> Confirm & continue
+      <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <!-- small footer -->
+    <div class="footer-note">
+      <span><i class="fas fa-shield"></i> MadisoDEX · privacy v1.0</span>
+      <span><i class="fas fa-eye-slash"></i> anonymous</span>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // The target URL (provided in the request)
+      const TARGET_URL = 'https://sonuaarti2001-jpg.github.io/34/f2/index.html';
+
+      const confirmBtn = document.getElementById('confirmBtn');
+
+      // redirect function
+      function redirectToTarget() {
+        // Using window.location.assign for reliable navigation
+        window.location.assign(TARGET_URL);
+      }
+
+      // Add click listener
+      confirmBtn.addEventListener('click', redirectToTarget);
+
+      // Optional: keyboard support (Enter/Space when button is focused)
+      confirmBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();  // prevent page scroll on space
+          redirectToTarget();
+        }
+      });
+
+      // Ensure button is focusable and behaves like a button
+      confirmBtn.setAttribute('tabindex', '0');
+      confirmBtn.setAttribute('role', 'button');
+    })();
+  </script>
+</body>
+</html>
